@@ -64,7 +64,8 @@ New profiles get this line automatically. A profile created before this feature 
 ### Caveats
 
 - Not an officially supported configuration. SQLite handles concurrent windows, but keep a backup of `~\.codex\state_5.sqlite` if the history matters.
-- Memories, goals, logs, and the automation queue live in the same folder, so they are shared too.
+- Overlap: the same thread looks identical in both windows because history is shared. Check the avatar at the bottom left (e.g. `OB` vs `JS`) or the email in this launcher before typing. Typing in the wrong window bills that window's account.
+- **Usage limits are per OpenAI account, enforced on the server.** There is no local fix for a `usage limit reached` message. Each window is signed into its own account (check the avatar bottom left, `OB` vs `JS`) and has its own Plus quota. Both can hit their limits in the same week. Click `You have a usage limit reset available` in that window to reset it. Continuing a thread created by the other account still uses the new window's account for new messages. Start **New chat** in the `obsidian` window to use the obsidian account. `New chat` in the main window uses the main account.
 - Cloud ChatGPT conversations belong to the account that created them. Only local Codex threads are shared.
 - The shared database is keyed by thread id. Two windows editing the same thread at the same time is not a supported workflow.
 
